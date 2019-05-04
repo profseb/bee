@@ -14,7 +14,7 @@
 		Blockly.Blocks['string_length'] = {
 		  init: function() {
 		    this.jsonInit({
-		      "message0": 'length of %1',
+		      "message0": 'tamanho de %1',
 		      "args0": [
 		        {
 		          "type": "input_value",
@@ -41,53 +41,13 @@
 	</xml>
 
 	<xml id="startBlocks" style="display: none">
-    <block type="controls_if" inline="false" x="20" y="20">
-      <mutation else="1"></mutation>
-      <value name="IF0">
-        <block type="logic_compare" inline="true">
-          <field name="OP">EQ</field>
-          <value name="A">
-            <block type="math_arithmetic" inline="true">
-              <field name="OP">MULTIPLY</field>
-              <value name="A">
-                <block type="math_number">
-                  <field name="NUM">6</field>
-                </block>
-              </value>
-              <value name="B">
-                <block type="math_number">
-                  <field name="NUM">7</field>
-                </block>
-              </value>
-            </block>
-          </value>
-          <value name="B">
-            <block type="math_number">
-              <field name="NUM">42</field>
-            </block>
-          </value>
+    <block type="text_print">
+     	<value name="TEXT">
+        <block type="text">
+          <field name="TEXT">Sebastião</field>
         </block>
-      </value>
-      <statement name="DO0">
-        <block type="text_print" inline="false">
-          <value name="TEXT">
-            <block type="text">
-              <field name="TEXT">Don't panic</field>
-            </block>
-          </value>
-        </block>
-      </statement>
-      <statement name="ELSE">
-        <block type="text_print" inline="false">
-          <value name="TEXT">
-            <block type="text">
-              <field name="TEXT">Panic</field>
-            </block>
-          </value>
-        </block>
-      </statement>
     </block>
-  </xml>
+  	</xml>
 
 	<div style="float:left">
 		<textarea style="float: left" id="textarea" rows="10" cols="40"></textarea>
@@ -122,7 +82,11 @@
 		var workspace = Blockly.inject('blocklyDiv',
 	      {toolbox: document.getElementById('toolbox')});
 
+		Blockly.Xml.domToWorkspace(document.getElementById('startBlocks'),
+                               workspace);
+
 		workspace.addChangeListener(myUpdateFunction);
+		
 
 	</script>
 
