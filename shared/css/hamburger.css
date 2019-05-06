@@ -1,0 +1,190 @@
+#pageheader-wrapper {
+  z-index: 99; }
+
+#hamburger, #help-button {
+  display: inline-block;
+  float: right;
+  z-index: 99;
+  position: relative;
+  font-size: 14px; }
+  #hamburger.hide-always, #help-button.hide-always {
+    display: none; }
+  #hamburger.show-mobile, #help-button.show-mobile {
+    display: none; }
+  #hamburger.show-always, #help-button.show-always {
+    display: block; }
+  #hamburger .hide-always, #help-button .hide-always {
+    display: none; }
+  #hamburger .show-mobile, #help-button .show-mobile {
+    display: none; }
+  #hamburger .show-always, #help-button .show-always {
+    display: block; }
+  #hamburger #hamburger-icon, #hamburger #help-icon, #help-button #hamburger-icon, #help-button #help-icon {
+    cursor: pointer;
+    height: 20px;
+    vertical-align: middle;
+    text-decoration: none; }
+  #hamburger #hamburger-contents, #hamburger #help-contents, #help-button #hamburger-contents, #help-button #help-contents {
+    font-size: 14px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 300px;
+    right: 0;
+    position: absolute;
+    top: 55px;
+    background-color: #00adbc;
+    z-index: 99;
+    max-height: 100vh;
+    overflow-y: auto;
+    padding-top: 10px;
+    padding-bottom: 10px; }
+    #hamburger #hamburger-contents .item, #hamburger #help-contents .item, #help-button #hamburger-contents .item, #help-button #help-contents .item {
+      color: #fff;
+      line-height: 20px;
+      padding: 4px;
+      text-indent: 0;
+      list-style-type: none;
+      border-radius: 2px;
+      padding-bottom: 10px;
+      margin-bottom: 5px;
+      margin-top: 5px;
+      margin-left: 25px;
+      display: block;
+      float: none;
+      max-width: 240px;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden; }
+      html[dir=rtl] #hamburger #hamburger-contents .item, html[dir=rtl] #hamburger #help-contents .item, html[dir=rtl] #help-button #hamburger-contents .item, html[dir=rtl] #help-button #help-contents .item {
+        margin-left: 0px;
+        margin-right: 25px; }
+      #hamburger #hamburger-contents .item:last-of-type, #hamburger #help-contents .item:last-of-type, #help-button #hamburger-contents .item:last-of-type, #help-button #help-contents .item:last-of-type {
+        border-bottom: none; }
+      #hamburger #hamburger-contents .item::before, #hamburger #help-contents .item::before, #help-button #hamburger-contents .item::before, #help-button #help-contents .item::before {
+        content: none; }
+      #hamburger #hamburger-contents .item:last-child, #hamburger #help-contents .item:last-child, #help-button #hamburger-contents .item:last-child, #help-button #help-contents .item:last-child {
+        margin-right: 0; }
+      #hamburger #hamburger-contents .item a, #hamburger #help-contents .item a, #help-button #hamburger-contents .item a, #help-button #help-contents .item a {
+        font-family: "Gotham 4r", sans-serif;
+        color: #fff;
+        text-decoration: none; }
+      #hamburger #hamburger-contents .item #about-more, #hamburger #help-contents .item #about-more, #help-button #hamburger-contents .item #about-more, #help-button #help-contents .item #about-more {
+        font-family: "Gotham 4r", sans-serif;
+        color: #fff;
+        text-decoration: none;
+        cursor: pointer; }
+      #hamburger #hamburger-contents .item #educate-more, #hamburger #help-contents .item #educate-more, #help-button #hamburger-contents .item #educate-more, #help-button #help-contents .item #educate-more {
+        font-family: "Gotham 4r", sans-serif;
+        color: #fff;
+        text-decoration: none;
+        cursor: pointer; }
+      #hamburger #hamburger-contents .item #about-down, #hamburger #help-contents .item #about-down, #help-button #hamburger-contents .item #about-down, #help-button #help-contents .item #about-down {
+        font-size: 30px;
+        float: right; }
+      #hamburger #hamburger-contents .item #about-up, #hamburger #help-contents .item #about-up, #help-button #hamburger-contents .item #about-up, #help-button #help-contents .item #about-up {
+        font-size: 30px;
+        float: right;
+        display: none; }
+      #hamburger #hamburger-contents .item #educate-up, #hamburger #help-contents .item #educate-up, #help-button #hamburger-contents .item #educate-up, #help-button #help-contents .item #educate-up {
+        font-size: 30px;
+        float: right;
+        display: none; }
+      #hamburger #hamburger-contents .item #educate-down, #hamburger #help-contents .item #educate-down, #help-button #hamburger-contents .item #educate-down, #help-button #help-contents .item #educate-down {
+        font-size: 30px;
+        float: right; }
+    #hamburger #hamburger-contents.hide-responsive-menu, #hamburger #help-contents.hide-responsive-menu, #help-button #hamburger-contents.hide-responsive-menu, #help-button #help-contents.hide-responsive-menu {
+      display: none; }
+    #hamburger #hamburger-contents .hide-about, #hamburger #help-contents .hide-about, #help-button #hamburger-contents .hide-about, #help-button #help-contents .hide-about {
+      display: none; }
+    #hamburger #hamburger-contents .hide-educate, #hamburger #help-contents .hide-educate, #help-button #hamburger-contents .hide-educate, #help-button #help-contents .hide-educate {
+      display: none; }
+    #hamburger #hamburger-contents .hamburger-expandable-item, #hamburger #help-contents .hamburger-expandable-item, #help-button #hamburger-contents .hamburger-expandable-item, #help-button #help-contents .hamburger-expandable-item {
+      cursor: pointer; }
+      #hamburger #hamburger-contents .hamburger-expandable-item .text, #hamburger #help-contents .hamburger-expandable-item .text, #help-button #hamburger-contents .hamburger-expandable-item .text, #help-button #help-contents .hamburger-expandable-item .text {
+        float: left;
+        max-width: 210px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden; }
+      #hamburger #hamburger-contents .hamburger-expandable-item .arrow-down, #hamburger #help-contents .hamburger-expandable-item .arrow-down, #help-button #hamburger-contents .hamburger-expandable-item .arrow-down, #help-button #help-contents .hamburger-expandable-item .arrow-down {
+        font-size: 30px;
+        float: right;
+        margin-top: -7px; }
+      #hamburger #hamburger-contents .hamburger-expandable-item .arrow-up, #hamburger #help-contents .hamburger-expandable-item .arrow-up, #help-button #hamburger-contents .hamburger-expandable-item .arrow-up, #help-button #help-contents .hamburger-expandable-item .arrow-up {
+        font-size: 30px;
+        float: right;
+        margin-top: -7px;
+        display: none; }
+    #hamburger #hamburger-contents .hamburger-expandable-items, #hamburger #help-contents .hamburger-expandable-items, #help-button #hamburger-contents .hamburger-expandable-items, #help-button #help-contents .hamburger-expandable-items {
+      margin-left: 20px;
+      display: none; }
+      #hamburger #hamburger-contents .hamburger-expandable-items .item, #hamburger #help-contents .hamburger-expandable-items .item, #help-button #hamburger-contents .hamburger-expandable-items .item, #help-button #help-contents .hamburger-expandable-items .item {
+        max-width: 220px;
+        margin-top: 0px; }
+    @media (max-width: 400px) {
+      #hamburger #hamburger-contents .item, #hamburger #help-contents .item, #help-button #hamburger-contents .item, #help-button #help-contents .item {
+        max-width: 240px; }
+      #hamburger #hamburger-contents .hamburger-expandable-item .text, #hamburger #help-contents .hamburger-expandable-item .text, #help-button #hamburger-contents .hamburger-expandable-item .text, #help-button #help-contents .hamburger-expandable-item .text {
+        max-width: 210px; }
+      #hamburger #hamburger-contents .hamburger-expandable-items .item, #hamburger #help-contents .hamburger-expandable-items .item, #help-button #hamburger-contents .hamburger-expandable-items .item, #help-button #help-contents .hamburger-expandable-items .item {
+        max-width: 220px; } }
+  #hamburger .divider, #help-button .divider {
+    height: 10px;
+    background: #0094a3; }
+  @media (max-width: 970px) {
+    #hamburger.show-mobile, #help-button.show-mobile {
+      display: block; }
+    #hamburger .show-mobile, #help-button .show-mobile {
+      display: block; }
+    #hamburger #hamburger-contents, #hamburger #help-contents, #help-button #hamburger-contents, #help-button #help-contents {
+      font-size: 18px; } }
+
+#hamburger #hamburger-icon {
+  padding: 10px 35px 16px 0;
+  float: right;
+  margin-top: 8px;
+  display: inline-block; }
+  #hamburger #hamburger-icon span, #hamburger #hamburger-icon span::before, #hamburger #hamburger-icon span::after {
+    cursor: pointer;
+    height: 3px;
+    width: 25px;
+    border-radius: 2px;
+    background: #fff;
+    position: absolute;
+    display: block;
+    content: '';
+    margin-top: 2px;
+    margin-bottom: 2px; }
+  #hamburger #hamburger-icon span {
+    transition: all 500ms ease-in-out; }
+    html[dir=rtl] #hamburger #hamburger-icon span {
+      margin-right: -25px; }
+      html[dir=rtl] #hamburger #hamburger-icon span::before {
+        margin-right: 0; }
+      html[dir=rtl] #hamburger #hamburger-icon span::after {
+        margin-right: 0; }
+    #hamburger #hamburger-icon span::before {
+      transition: all 500ms ease-in-out;
+      top: -10px; }
+    #hamburger #hamburger-icon span::after {
+      transition: all 500ms ease-in-out;
+      bottom: -10px; }
+  #hamburger #hamburger-icon.active span {
+    background-color: transparent; }
+    #hamburger #hamburger-icon.active span::before {
+      top: 0;
+      transform: rotate(45deg); }
+    #hamburger #hamburger-icon.active span::after {
+      top: 0;
+      transform: rotate(-45deg); }
+
+#help-button {
+  padding-left: 20px;
+  padding-top: 4px; }
+  #help-button #help-icon {
+    padding: 9px 0 16px 0;
+    font-size: 26px;
+    color: #fff; }
+
+/*# sourceMappingURL=hamburger.css.map */

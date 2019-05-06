@@ -1,0 +1,19 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html><body>
+<div class="note">
+<img src="/assets/notes/C1_bee_level_intro_1-4ad4afed66bf8ffc4c4491e27ad0a2322fc7dd77d829eb282b59bdbff8d551aa.png" alt="C1 bee level intro 1">
+<p>Abelhas não são super legais? Nesse próximo conjunto de desafios, seu objetivo é ajudar a abelha a chegar até as flores, obter seu néctar e voar até a colmeia para produzir mel. Você precisa usar os blocos "obtenha néctar" e "faça mel" nesse exercício.</p>
+<div class="clear"></div>
+</div>
+<div class="note">
+<img src="/assets/notes/C1_bee_level_intro_2-55314282d0f5de29499846f830d5ae65563ee0999c55dd152f657cb000102c84.png" alt="C1 bee level intro 2">
+<p>Cada flor tem um número diferente de néctares: 1, 2, 3, ou mais. Sabemos a quantidade de néctar presente nas flores vermelhas, por meio do pequeno número no canto. Então lembre-se de obter todo o néctar da flor antes de avançar. Além disso, cada colmeia pode armazenar apenas uma certa quantidade de mel: 1, 2, 3, ou mais. Então lembre-se de produzir o máximo de mel que uma colmeia pode armazenar.</p>
+<div class="clear"></div>
+</div>
+<div class="note">
+<img src="/assets/notes/C1_bee_level_intro_3-e60f16fd40c7b758fee38ab759ecba141f4cb5667ae5e712f94830336bc4bcf9.png" alt="C1 bee level intro 3">
+<p>Se você puder obter todo o néctar e produzir todo o mel, você vai para o próximo nível. Caso contrário, você precisa realizar esse desafio novamente. Brinque um pouco e veja como a programação é doce como o mel!</p>
+<div class="clear"></div>
+</div>
+</body></html>
