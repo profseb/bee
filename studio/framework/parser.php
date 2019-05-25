@@ -21,7 +21,9 @@ if (file_exists($cache_file) && !$force_remote) {
 
 require_once "patterns.php";
 
+//$html = '';
 $html = preg_replace($patterns, $replacements, $html);
+//echo htmlentities($html);exit;
 
 file_put_contents("$base_path/source/$filename.html", $html);	
 
