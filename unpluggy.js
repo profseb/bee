@@ -27,7 +27,11 @@ function initPreLoad() {
     	Blockly.mainBlockSpace.clear();	
 		var xml = Blockly.Xml.textToDom('<xml id="startBlocks"><block type="when_run" deletable="false" movable="false"></xml>');
 		Blockly.Xml.domToBlockSpace(Blockly.mainBlockSpace, xml);
+
+		//sessionStorage.setItem('progress',{});
+		
 		console.log("Success");		
+		
     } catch(e) {
     	console.log('Exception');
     	setTimeout(initPreLoad,50);

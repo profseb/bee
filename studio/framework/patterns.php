@@ -19,8 +19,9 @@ if (file_exists($xml_file)) {
 $patterns = array();
 $replacements = array();
 
+$patterns[] = '/"nextLevelUrl":"\/s\//i';
+$patterns[] = '/"redirect":"\/s\//i';
 $patterns[] = '/http:\/\/studio\.code\.org\/s/i';
-//$patterns[] = '/http:\/\/studio\.code\.org\/s\/course/i';
 $patterns[] = '/(<div class="header_level_container">)/i';
 $patterns[] = '/<\/body>/i';
 $patterns[] = '/application-(.*)\.css/i';
@@ -47,9 +48,11 @@ $patterns[] = '/(en_us)\/(.*)\.js/i';
 $patterns[] = '/\/\/www\.google-analytics\.com\/analytics\.js/i';
 $patterns[] = '/\/\/cdn\.optimizely\.com\/js\/(.*)\.js/i';
 
+$replacements[] = '"nextLevelUrl":"/studio/' . $game . "/";
+$replacements[] = '"redirect":"/studio/' . $game . "/";
 $replacements[] = 'http://mycode.org/studio/'. $game;
 $replacements[] = '$1<button id="extractButton">Extrair XML</button><button id="myButton">Executar</button>';
-$replacements[] = '<div id="xmlWrapper">' . html_entity_decode($xml) . '</div><script type="text/javascript" src="/unpluggy.js"></script></body>';
+$replacements[] = '<div id="xmlWrapper">' . html_entity_decode($xml) . '</div><script type="text/javascript" src="/unpluggy.js?' . time() . '"></script></body>';
 $replacements[] = 'application.css';
 $replacements[] = 'code-studio.css';
 $replacements[] = 'common.css';
