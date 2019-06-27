@@ -1,5 +1,47 @@
 <?php
 
+$base_url = "http://mycode.org";
+
+$fetch_local = false; 
+$force_remote = false;
+
+if ($_GET["solution"] != "") {
+
+	$solution = explode("-",$_GET["solution"]);
+	array_pop($solution);
+
+	$xml = new SimpleXMLElement("<xml></xml>");
+	
+	$block = $xml->addChild('block');
+	$block->addAttribute('type', 'when_run');
+	$block->addAttribute('deletable', 'false');
+	$block->addAttribute('movable', 'false');
+	$next = $block->addChild("next");
+
+	$blocks = array("N"=>"maze_moveNorth","S"=>"maze_moveSouth","L"=>"maze_moveEast","O"=>"maze_moveWest","G"=>"maze_nectar","M"=>"maze_honey");
+
+	foreach($solution as $key=>$item) {
+		$next = $next->addChild("block");
+		$next->addAttribute("type",$blocks[$item]);
+		if ($key < count($solution) - 1) {
+			$next = $next->addChild("next");
+		}
+	}
+	
+	$solution_xml =  explode("\n",$xml->asXML());
+	array_pop($solution_xml);
+	array_shift($solution_xml);
+	$solution_xml = implode("", $solution_xml);
+	$solution_xml = str_replace("/>","></block>",$solution_xml);
+	
+	$fetch_local = false;
+		
+}
+
+
+$course = (empty($_GET["c"])) ? 1:$_GET["c"];
+$stage = (empty($_GET["s"])) ? $default_stage:$_GET["s"];
+$index = (empty($_GET["p"])) ? 1:$_GET["p"];
 
 $opts = array(
 			  'http'=>array(
@@ -22,7 +64,6 @@ $base_path = "../$game";
 
 $cache_file = "$base_path/cache/$filename.html";
 $url = "https://studio.code.org/s/course$course/stage/$stage/puzzle/$index";
-
 
 
 if (file_exists($cache_file) && !$force_remote) {

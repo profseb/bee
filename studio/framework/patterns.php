@@ -1,18 +1,28 @@
 <?php
 
+if ($solution_xml == "") {
 
-$xml_file = "$base_path/xml/$filename.xml";
+	$xml_file = "$base_path/xml/$filename.xml";
 
-if (file_exists($xml_file)) {
-	$xml = file_get_contents($xml_file);
+	if (file_exists($xml_file)) {
+		$xml = file_get_contents($xml_file);
+	} else {
+
+		$h = explode("var appOptions = ",$html);
+		$h = explode("appOptions.locale",$h[1]);
+		$h = preg_replace(array('/}};/i','/\\\u003c/i','/\\\u003e/i'),array('}}','&lt;','&gt;'),$h[0]);
+		$json = json_decode($h);
+		$xml = $json->level->solutionBlocks;
+		file_put_contents($xml_file,html_entity_decode($xml));
+
+	}
+
 } else {
+	$xml = $solution_xml;
 
-	$h = explode("var appOptions = ",$html);
-	$h = explode("appOptions.locale",$h[1]);
-	$h = preg_replace(array('/}};/i','/\\\u003c/i','/\\\u003e/i'),array('}}','&lt;','&gt;'),$h[0]);
-	$json = json_decode($h);
-	$xml = $json->level->solutionBlocks;
-	file_put_contents($xml_file,html_entity_decode($xml));
+	if ($_GET["play"] == "1") {
+		$autoplay = '<script type="text/javascript">var autorun = true;</script>';
+	}
 
 }
 
@@ -22,7 +32,9 @@ $replacements = array();
 $patterns[] = '/"nextLevelUrl":"\/s\//i';
 $patterns[] = '/"redirect":"\/s\//i';
 $patterns[] = '/http:\/\/studio\.code\.org\/s/i';
-$patterns[] = '/(<div class="header_level_container">)/i';
+if ($_GET["play"] == "") {
+	$patterns[] = '/(<div class="header_level_container">)/i';
+}
 $patterns[] = '/<\/body>/i';
 $patterns[] = '/application-(.*)\.css/i';
 $patterns[] = '/code-studio-(.*)\.css/i';
@@ -50,9 +62,11 @@ $patterns[] = '/\/\/cdn\.optimizely\.com\/js\/(.*)\.js/i';
 
 $replacements[] = '"nextLevelUrl":"/studio/' . $game . "/";
 $replacements[] = '"redirect":"/studio/' . $game . "/";
-$replacements[] = 'http://mycode.org/studio/'. $game;
-$replacements[] = '$1<button id="extractButton">Extrair XML</button><button id="myButton">Executar</button>';
-$replacements[] = '<div id="xmlWrapper">' . html_entity_decode($xml) . '</div><script type="text/javascript" src="/unpluggy.js?' . time() . '"></script></body>';
+$replacements[] = $base_url . '/studio/'. $game;
+if ($_GET["play"] == "") {
+	$replacements[] = '$1<button id="extractButton">Extrair XML</button><button id="myButton">Executar</button>';
+}	
+$replacements[] = '<div id="xmlWrapper">' . html_entity_decode($xml) . '</div>' . $autoplay . '<script type="text/javascript" src="/unpluggy.js?' . time() . '"></script></body>';
 $replacements[] = 'application.css';
 $replacements[] = 'code-studio.css';
 $replacements[] = 'common.css';
