@@ -20,20 +20,23 @@ if ($solution_xml == "") {
 } else {
 	$xml = $solution_xml;
 
-	if ($_GET["play"] == "1") {
-		$autoplay = '<script type="text/javascript">var autorun = true;</script>';
-	}
+}
 
+if ($_GET["play"] == "1") {
+	$autoplay = '<script type="text/javascript">var autorun = true;</script>';
+} else {
+	$autoplay = '<script type="text/javascript">var autorun = false;</script>';
 }
 
 $patterns = array();
 $replacements = array();
 
+//$patterns[] = '/{"ids/i';
 $patterns[] = '/"nextLevelUrl":"\/s\//i';
 $patterns[] = '/"redirect":"\/s\//i';
 $patterns[] = '/http:\/\/studio\.code\.org\/s/i';
 if ($_GET["play"] == "") {
-	$patterns[] = '/(<div class="header_level_container">)/i';
+	//$patterns[] = '/(<div class="header_level_container">)/i';
 }
 $patterns[] = '/<\/body>/i';
 $patterns[] = '/application-(.*)\.css/i';
@@ -60,11 +63,12 @@ $patterns[] = '/(en_us)\/(.*)\.js/i';
 $patterns[] = '/\/\/www\.google-analytics\.com\/analytics\.js/i';
 $patterns[] = '/\/\/cdn\.optimizely\.com\/js\/(.*)\.js/i';
 
+//$replacements[] = 'TROCADO';
 $replacements[] = '"nextLevelUrl":"/studio/' . $game . "/";
 $replacements[] = '"redirect":"/studio/' . $game . "/";
 $replacements[] = $base_url . '/studio/'. $game;
 if ($_GET["play"] == "") {
-	$replacements[] = '$1<button id="extractButton">Extrair XML</button><button id="myButton">Executar</button>';
+	//$replacements[] = '$1<button id="extractButton">Extrair XML</button><button id="myButton">Executar</button>';
 }	
 $replacements[] = '<div id="xmlWrapper">' . html_entity_decode($xml) . '</div>' . $autoplay . '<script type="text/javascript" src="/unpluggy.js?' . time() . '"></script></body>';
 $replacements[] = 'application.css';

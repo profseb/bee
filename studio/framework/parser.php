@@ -78,6 +78,8 @@ require_once "patterns.php";
 //$html = '';
 $html = preg_replace($patterns, $replacements, $html);
 //echo htmlentities($html);exit;
+//echo "<pre>";
+//var_dump($html);exit;
 
 file_put_contents("$base_path/source/$filename.html", $html);	
 

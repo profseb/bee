@@ -35,7 +35,7 @@ function initPreLoad() {
 				$("#x-close, .csf-top-instructions button").click();				
 				loadBlocksAndRun();
 
-			},2000);
+			},3000);
 		}
 		
 		console.log("Success");		
