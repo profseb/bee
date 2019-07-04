@@ -33,7 +33,7 @@ if ($_GET["solution"] != "") {
 	array_shift($solution_xml);
 	$solution_xml = implode("", $solution_xml);
 	$solution_xml = str_replace("/>","></block>",$solution_xml);
-	
+		
 	$fetch_local = false;
 		
 }

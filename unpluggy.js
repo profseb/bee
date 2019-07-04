@@ -28,7 +28,7 @@ function initPreLoad() {
 		var xml = Blockly.Xml.textToDom('<xml id="startBlocks"><block type="when_run" deletable="false" movable="false"></xml>');
 		Blockly.Xml.domToBlockSpace(Blockly.mainBlockSpace, xml);
 
-		sessionStorage.setItem('video',{C1_bee_level_intro: true});
+		sessionStorage.setItem('video',{C1_bee_level_intro: false});
 		
 		if (autorun) {
 			setTimeout(function() {
